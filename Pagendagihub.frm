@@ -91,29 +91,26 @@ End If
 End Sub
 
 Private Sub cmdExcluir_Click()
+Dim i As Integer
 If MsgBox("Você tem a certeza que deseja excluir este este item?", vbYesNo, "Confirmação") = vbYes Then
-ActiveCell.Offset(0, 1).Value = Empty
-ActiveCell.Offset(0, 2).Value = Empty
-ActiveCell.Offset(0, 3).Value = Empty
-ActiveCell.Offset(0, 4).Value = Empty
-ActiveCell.Offset(0, 5).Value = Empty
-ActiveCell.Offset(0, 52).Value = Empty
-ActiveCell.Offset(0, 126).Value = Empty
-ActiveCell.Offset(0, 7).Value = Empty
-ActiveCell.Offset(0, 8).Value = Empty
-ActiveCell.Offset(0, 9).Value = Empty
-ActiveCell.Offset(0, 10).Value = Empty
-ActiveCell.Offset(0, 11).Value = Empty
-ActiveCell.Offset(0, 12).Value = Empty
-ActiveCell.Offset(0, 13).Value = Empty
+For i = 1 To 13
+
+ActiveCell.Offset(0, i).Value = Empty
+Next i
+
+
+
+
+
+
 ActiveCell.Offset(0, 24).Value = Empty
 ActiveCell.Offset(0, 36).Value = Empty
 ActiveCell.Offset(0, 50).Value = Empty
 ActiveCell.Offset(0, 51).Value = Empty
-ActiveCell.Offset(0, 127).Value = Empty
 ActiveCell.Offset(0, 52).Value = Empty
 ActiveCell.Offset(0, 53).Value = Empty
-
+ActiveCell.Offset(0, 126).Value = Empty
+ActiveCell.Offset(0, 127).Value = Empty
 limparCampos
 ActiveWorkbook.Save
 MsgBox "A exclusão foi efetuada com sucesso", vbInformation, "Confirmação"
